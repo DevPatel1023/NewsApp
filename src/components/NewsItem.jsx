@@ -4,11 +4,11 @@ export class NewsItem extends Component {
   render() {
     let { title, description, imageURL, newsUrl } = this.props;
 
-    const defaultImage = process.env.PUBLIC_URL + "/th.jpg";
+    const defaultImage = process.env.PUBLIC_URL + '/th.jpg';
     const defaultDescription = "Description not available.";
 
     return (
-      <div className="news-item">
+      <div className="container-fluid my-3">
         <div className="card">
           <img src={imageURL ? imageURL : defaultImage} className="card-img-top" alt={title} />
           <div className="card-body">

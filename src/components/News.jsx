@@ -53,7 +53,7 @@ export class News extends Component {
     const { articles, page, pageSize, totalResults, loading } = this.state;
     return (
       <div className="container my-3">
-        <h2 className="text-center">Upnext news - Top Headlines</h2>
+        <h2 className="text-center">UpnextNews - Top Headlines of {this.props.category}</h2>
         {loading && <div className="text-center">Loading...</div>}
         <div className="row mt-4 container">
           {!loading &&
