@@ -1,3 +1,4 @@
+![image](https://github.com/DevPatel1023/UpNext-News/assets/118754663/fc8917fc-dc19-4dde-b2a0-be8f6ed42f0f)
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
