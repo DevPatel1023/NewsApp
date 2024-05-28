@@ -3,8 +3,6 @@ import NewsItem from "./NewsItem";
 import PropTypes from "prop-types";
 
 export class News extends Component {
-  
-
   constructor(props) {
     super(props);
     this.state = {
@@ -12,7 +10,7 @@ export class News extends Component {
       loading: false,
       page: 1,
       totalResults: 0,
-      pageSize: props.pageSize || 9, 
+      pageSize: props.pageSize || 9,
     };
   }
 
@@ -22,7 +20,7 @@ export class News extends Component {
 
   fetchNews = async () => {
     const { page, pageSize } = this.state;
-    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&page=${page}&category=business&apiKey=645492f4e3644edd8e75e49acabe300f&pageSize=${pageSize}`;
+    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&page=${page}&apiKey=645492f4e3644edd8e75e49acabe300f&pageSize=${pageSize}`;
     this.setState({ loading: true });
     let data = await fetch(url);
     let parsedData = await data.json();
@@ -57,7 +55,7 @@ export class News extends Component {
       <div className="container my-3">
         <h2 className="text-center">Upnext news - Top Headlines</h2>
         {loading && <div className="text-center">Loading...</div>}
-        <div className="row mt-4">
+        <div className="row mt-4 container">
           {!loading &&
             articles.map((element) => (
               <div className="col-md-4 mb-4" key={element.url}>
@@ -95,14 +93,14 @@ export class News extends Component {
 
 News.defaultProps = {
   pageSize: 9,
-  country : 'us',
-  category : 'general'
-};
-News.propTypes = {
-  pageSize: PropTypes.number,
-  country : PropTypes.string,
-  category : PropTypes.string
+  country: "in",
+  category: "general",
 };
 
+News.propTypes = {
+  pageSize: PropTypes.number,
+  country: PropTypes.string,
+  category: PropTypes.string,
+};
 
 export default News;
